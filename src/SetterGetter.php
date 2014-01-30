@@ -29,10 +29,6 @@ class SetterGetter
      */
     public function __call($name, $argument)
     {
-        if (!isset($argument)) {
-            Throw new \Exception('You forgot add an argument.');
-        }
-
         // if is set method, add argument to setter array
         if (substr($name, 0, 3) === 'set') {
             $this->setter[substr($name, 3, mb_strlen($name))] = $argument;
