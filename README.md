@@ -20,7 +20,7 @@ Add this to your composer.json
 ```json
 {
     "require": {
-        "bjarneo/settergetter": ""
+        "bjarneo/settergetter": "dev-master"
     }
 }
 ```
