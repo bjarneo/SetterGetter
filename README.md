@@ -74,6 +74,12 @@ foreach($sg->getTester() as $key => $val) {
 
 ```
 
+Debugging
+-------
+```php
+// If you need to see what getters that are available, use debug method.
+$s->debug();
+```
 License
 -------
 

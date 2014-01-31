@@ -63,6 +63,11 @@ class SetterGetter
      */
     public function debug()
     {
-        var_dump($this->setter);
+        if (empty($this->setter)) {
+            Throw new \Exception('No getter available!');
+        }
+        foreach($this->setter as $method => $arg) {
+            echo nl2br("get{$method}()\r\n");
+        }
     }
 }
