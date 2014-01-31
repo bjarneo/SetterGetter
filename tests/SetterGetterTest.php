@@ -12,4 +12,15 @@ class SetterGetterTest extends \PHPUnit_Framework_TestCase
         $this->assertContains('string', $sg->getTester());
     }
 
+    public function testSet()
+    {
+        $a = array(
+            'method' => 'argument',
+            'methods' => 'arguments'
+        );
+
+        $sg = new SetterGetter;
+        $sg->set($a);
+        $this->assertContains('argument', $sg->getMethod());
+    }
 }

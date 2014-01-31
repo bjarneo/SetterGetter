@@ -33,6 +33,21 @@ require_once 'src/SetterGetter.php';
 
 $sg = new SetterGetter;
 
+// How to add methods + arguments as an array
+$sg->set(array(
+    'languages' => array(
+        'php' => 'is fun',
+        'javascript' => 'is also'
+    ),
+    'justAname' => 'test',
+    'LARGE' => 'testest'
+));
+
+var_dump($sg->getJustAname());
+var_dump($sg->getLanguages());
+var_dump($sg->getLARGE());
+
+
 $sg->setTest('Mama-san');
 printf("%s \r\n", $sg->getTest());
 // Output: Mama-san

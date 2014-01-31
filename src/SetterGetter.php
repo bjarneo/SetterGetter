@@ -16,7 +16,7 @@ class SetterGetter
      *
      * @var array $setter
      */
-    private $setter = array();
+    protected $setter = array();
 
     /**
      *
@@ -43,5 +43,26 @@ class SetterGetter
                 Throw new \Exception('Couldn\'t find getter method. Did you forget to create a setter?');
             }
         }
+    }
+
+    /**
+     *
+     * Add an array with method name and arguments
+     *
+     * @param array $setters
+     */
+    public function set(array $setters = array())
+    {
+        foreach($setters as $name => $arg) {
+            $this->setter[ucfirst($name)][0] = $arg;
+        }
+    }
+
+    /**
+     * Debug purpose
+     */
+    public function debug()
+    {
+        var_dump($this->setter);
     }
 }
