@@ -31,7 +31,7 @@ class SetterGetter
     {
         // if is set method, add argument to setter array
         if (substr($name, 0, 3) === 'set') {
-            $this->setter[substr($name, 3, mb_strlen($name))] = $argument;
+            $this->setter[$this->nameGen(substr($name, 3, mb_strlen($name)))] = $argument;
         }
 
         // if is get method, return get value
@@ -54,7 +54,24 @@ class SetterGetter
     public function set(array $setters = array())
     {
         foreach($setters as $name => $arg) {
-            $this->setter[ucfirst($name)][0] = $arg;
+            $this->setter[$this->nameGen($name)][0] = $arg;
+        }
+    }
+
+    /**
+     * @param string $name method name
+     * @return string
+     */
+    protected function nameGen($name)
+    {
+        $names = null;
+        if (strpos($name, '_') !== false) {
+            $names = explode('_', $name);
+            $names = array_map('ucfirst', $names);
+
+            return implode('', $names);
+        } else {
+            return ucfirst($name);
         }
     }
 

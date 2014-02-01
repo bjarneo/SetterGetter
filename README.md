@@ -40,12 +40,15 @@ $sg->set(array(
         'javascript' => 'is also'
     ),
     'justAname' => 'test',
-    'LARGE' => 'testest'
+    'LARGE' => 'testest',
+    'name_with_underscore' => 'Value'
 ));
 
 var_dump($sg->getJustAname());
 var_dump($sg->getLanguages());
 var_dump($sg->getLARGE());
+// If you use underscore they will be removed and words will be capitalized
+var_dump($sg->getNameWithUnderscore());
 
 
 $sg->setTest('Mama-san');
