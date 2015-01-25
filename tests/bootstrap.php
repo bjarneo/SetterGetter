@@ -1,6 +1,6 @@
 <?php
 
-//require_once('vendor/autoload.php');
+require __DIR__ . '/../vendor/autoload.php';
 
 // http://tech.vg.no/2013/07/19/using-phps-built-in-web-server-in-your-test-suites/
 // Command that starts the built-in web server
