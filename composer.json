@@ -12,9 +12,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "SetterGetter": "src/",
-            "SetterGetterTest": "tests/"
+        "psr-4": {
+            "SetterGetter\\": "src/SetterGetter"
         }
     },
     "require": {
