@@ -29,7 +29,7 @@ Usage
 -----
 
 ```php
-require_once 'src/SetterGetter.php';
+use SetterGetter/SetterGetter;
 
 $sg = new SetterGetter;
 
